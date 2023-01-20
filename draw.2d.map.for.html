@@ -1,0 +1,113 @@
+<body style="font-family: monospace; line-height: 9px; font-size:larger
+;">
+    
+</body>
+<script>
+
+    //the map of a room 10  x 10m
+    //rx , ry = coord of vacuum cleaner robot
+    // . . . . . . . . . . . 
+    // . . . . . . . . . . . 
+    // . . . . . . . . . . . 
+    // . . . . . . . . . . . 
+    // . . . . . R . . . . . 
+    // . . . . . . . . . . . 
+    // . . . . . . . . . . . 
+    // . . . . . . . . . . . 
+    // . . . . . . . . . . . 
+    // . . . . . . . . . . . 
+
+    //HW1:  we have 2 more coords: sx, sy -station
+    //            print "S"
+
+    let rx = 2
+    let ry = 6
+
+    let sx = 4
+    let sy = 6
+
+    let ax = 3
+    let ay = 6
+
+    //############# line x 10 #######
+    for(let y = 1;  y<=10; y++){
+
+    
+        // ############ dot x 10 #########
+        for (let x= 1; x <= 10; x++){
+
+            if(x == rx && y == ry){
+                document.write(`R`)
+
+            }else if(x == sx && y == sy){
+                document.write(`S`)
+
+            }else if(x == ax && y ==ay){
+                document.write(`Â`)
+            }else{
+                document.write(`.`)
+            }
+            
+        }
+        document.write(`<br>`)
+
+        //############# dot x 10 #######
+    }
+    //############# line x 10 #######
+
+
+
+
+    //while-while
+
+    // let y = 1    // asa rezultat ne pozitioneaza R si S cu o pozitie inapoi pe x si y  comparativ cu "for"
+    // while(y <=10){
+    //     y++
+
+    //     let x= 1
+    //     while ( x <= 10){
+    //         x++
+
+    //         if(x == rx && y == ry){
+    //             document.write(`R`)
+
+    //         }else if(x == sx && y == sy){
+    //             document.write(`S`)
+
+    //         }else{
+    //             document.write(`.`)
+    //         }
+
+    //     }
+    //     document.write(`<br>`)
+    // }
+
+
+
+
+    //while   -for
+
+    // let y = 1    // asa rezultat ne pozitioneaza R si S cu o pozitie inapoi pe y  comparativ cu "for", din cauza lui "while". While cind afiseaza un sir de numere, 1 il numara dar nu afiseaza, afiseaza imediat 2.
+    // while(y <=10){
+    //     y++
+
+    //     for(let x= 1; x <= 10; x++ ){
+           
+
+    //         if(x == rx && y == ry){
+    //             document.write(`R`)
+
+    //         }else if(x == sx && y == sy){
+    //             document.write(`S`)
+
+    //         }else{
+    //             document.write(`.`)
+    //         }
+
+    //     }
+    //     document.write(`<br>`)
+    // }
+
+
+
+</script>
