@@ -1,0 +1,47 @@
+<button onclick="moveLeft();drawMap()">◂</button>
+<span id="gameMap"></span>
+<button onclick="moveRight();drawMap()">▸</button>
+
+<script>
+
+
+    const LEN = 20
+    //   --------------------x ------------------------>
+    let rx = 1
+
+    function drawMap() {
+        gameMap.innerHTML = ""
+        for(let x = 1; x<=LEN; x++){
+            if(x == rx){
+                gameMap.innerHTML += "►"
+            }else {
+                gameMap.innerHTML += "┄"
+            }
+            
+        }
+    }
+
+    function moveLeft(){
+        if(rx == 1){
+            alert("START")
+
+        }else{
+           rx--  
+        }
+          
+    }
+
+
+    function moveRight(){
+        if(rx == LEN){
+            alert("END")
+        }else{
+            rx++
+        }
+        
+    }
+
+    drawMap()
+
+</script>
+

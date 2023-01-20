@@ -1,0 +1,51 @@
+<script>
+
+  //DATA
+    const PIN       = "0009"     /// why not number
+    const MAX_MONEY = 50000.00
+   
+    let pin     = ""
+    let tries   = 0
+    let balance = 1000000.00
+
+    while(true){
+
+        pin = prompt("Enter PIN: ")
+
+        tries++
+
+        if (pin == PIN){ 
+            ////////////
+            alert(`
+                ACCESS GRANTED!!!\n\n
+                your balance: ${balance}MDL
+            `)
+            let money = +prompt("Withdraw: ?")
+                  //HW1:check balance
+            if( balance >= money && money <= MAX_MONEY){
+                balance -=money     ///balance = balance -money 
+                alert(`
+                Success!\n\n
+                your balance: ${balance}MDL
+            `)  
+                //HW2: max withdraw money = 50000.00
+            } else{
+                alert(`Maximum withdrawal amount per day is EXCEDED: ${MAX_MONEY}MDL \n\n
+                    Please try again!`)
+
+            }
+            
+            //////////
+            break
+        }else {
+            alert("WRONG PIN!!!")
+            if(tries == 3){
+                alert("CARD BLOCKED!!!")
+                break    //force while stop
+            }
+        }
+
+        
+   }
+
+</script>
