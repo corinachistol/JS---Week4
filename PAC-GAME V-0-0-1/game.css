@@ -1,0 +1,31 @@
+body{
+    background-color: #333;
+    color: white;
+}
+
+.gameMap{
+    width: 500px;
+    height: 500px;
+    border:10px solid #666;
+    color: white;
+}
+
+.gameMap div{
+    width: 47.5px;
+    height: 47.5px;
+    border:1px solid #555;
+
+    float:left
+}
+
+.gameMap .pac{
+    background-image: url(icons/Cute-Ball-Games-icon.png);
+}
+
+.gameMap .coin{
+    background-image: url(icons/coin-us-dollar-icon.png);
+}
+
+.gameMap .bomb{
+    background-image: url(icons/Actions-edit-bomb-icon.png);
+}
