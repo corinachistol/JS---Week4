@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GALLERY</title>
+    <style>
+        body{
+            background-color: #123;
+        }
+
+        #gallery{
+            width: 590px;
+            border: 1px solid black;
+            margin: 50px auto;
+            text-align: center;
+        }
+
+        #gallery button{
+            font-size:30px;
+            display: inline-block;
+            transform: translateY(-250px);
+            border-color: transparent;
+            cursor: pointer;
+            background-color: #123;
+            color: white;
+            
+        }
+
+        #gallery .thumb{
+            width: 100px;
+            border: 1px solid transparent;
+            cursor: pointer;
+        }
+
+        #gallery .thumb.active{
+            border-color: white;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="gallery">
+        <button onclick="previous()">◀</button>
+        <img src="images/1.jpg" id="mainImage">
+        <button onclick="next()">▶</button>
+
+        <hr/>
+
+        <img id="thumb1" onclick="selectImage(1)" src="images/1.jpg" class="thumb active">
+        <img id="thumb2" onclick="selectImage(2)" src="images/2.jpg" class="thumb">
+        <img id="thumb3" onclick="selectImage(3)" src="images/3.jpg" class="thumb">
+        <img id="thumb4" onclick="selectImage(4)" src="images/4.jpg" class="thumb">
+        <img id="thumb5" onclick="selectImage(5)" src="images/5.jpg" class="thumb">
+
+    </div>
+
+    <script>
+
+        let  selectedImage = 1
+
+        function selectImage(n){
+            //change main image
+            mainImage.src=`images/${n}.jpg`
+
+            for (let i = 1; i<=5; i++){
+                if (i == n){
+                   //set active class to thumb
+                    window[`thumb${i}`].className ='thumb active' 
+                }else{
+                    window[`thumb${i}`].className ='thumb' 
+                }
+            }
+
+            
+        }
+
+        function next(){
+            
+            if(selectedImage <= 5){
+                selectedImage++;
+                if(selectedImage > 5){
+                        selectedImage = 1
+                    } else{
+                        
+                    } 
+                
+            selectImage(selectedImage);     
+               
+            }
+              
+        }
+
+         function previous(){
+             if(selectedImage <=5){
+                selectedImage--;
+                if(selectedImage < 1){
+                    selectedImage = 5
+                }else{
+
+                }
+                selectImage(selectedImage); 
+        }
+
+
+        }
+    // </script>
+
+
+    
+</body>
+</html>
