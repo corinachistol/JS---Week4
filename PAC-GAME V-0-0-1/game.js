@@ -1,11 +1,20 @@
-let pac_x = 3
-let pac_y = 10
+let pac_x = parseInt( 1 + Math.random() * 9)
+let pac_y = parseInt( 1 + Math.random() * 9)
 
-let coin_x = 2
-let coin_y = 2
+let coin_x = parseInt( 1 + Math.random() * 9)
+let coin_y = parseInt( 1 + Math.random() * 9)
 
-let bomb_x = 8
-let bomb_y = 6
+let coin2_x = parseInt( 1 + Math.random() * 9)
+let coin2_y = parseInt( 1 + Math.random() * 9)
+
+let coin3_x = parseInt( 1 + Math.random() * 9)
+let coin3_y = parseInt( 1 + Math.random() * 9)
+
+let bomb_x = parseInt( 1 + Math.random() * 9)
+let bomb_y = parseInt( 1 + Math.random() * 9)
+
+let bomb2_x = parseInt( 1 + Math.random() * 9)
+let bomb2_y = parseInt( 1 + Math.random() * 9)
 
 
 let score = 0
@@ -13,6 +22,12 @@ let hp = 100
 
 let coin_state = true
 let bomb_state = true
+
+let coin2_state = true
+let bomb2_state = true
+
+let coin3_state = true
+
 
 let start_row = 1
 let end_row = 10
@@ -34,10 +49,24 @@ function action(){
         coin_state = false
         
     }
-
+    if(pac_x == coin2_x && pac_y == coin2_y){
+        score += 10 
+        coin2_state = false
+        
+    }
+    if(pac_x == coin3_x && pac_y == coin3_y){
+        score += 10 
+        coin3_state = false
+        
+    }
+  
     if(pac_x == bomb_x && pac_y == bomb_y){
         hp -=20
-        bomb_state = false
+        bomb_state = false 
+    }
+    if(pac_x == bomb2_x && pac_y == bomb2_y){
+        hp -=20
+        bomb2_state = false 
     }
     
     if (pac_x > end_row){
@@ -49,10 +78,6 @@ function action(){
     }else if (pac_y < start_col){
         pac_y = end_col
     }
-
-
-
-     
 
     renderMap()
 
@@ -66,16 +91,27 @@ function renderMap(){
 
             if(x == pac_x && y == pac_y){
                 gameMap.innerHTML += `<div class="pac"></div>`  
+            }else if(x == coin_x && y == coin_y && !coin_state){
+                gameMap.innerHTML += `<div></div>`
             }else if(x == coin_x && y == coin_y){
-                gameMap.innerHTML += `<div class="coin"></div>` 
-                if(coin_state == false){
-                    gameMap.innerHTML = `<div></div>`
-                }
+                gameMap.innerHTML += `<div class="coin"></div>`
+            }else if(x == coin2_x && y == coin2_y && !coin2_state){
+                gameMap.innerHTML += `<div></div>`
+            }else if(x == coin2_x && y == coin2_y){
+                gameMap.innerHTML += `<div class="coin"></div>`
+            }else if(x == bomb_x && y == bomb_y && !bomb_state){
+            }else if(x == coin3_x && y == coin3_y && !coin3_state){
+                gameMap.innerHTML += `<div></div>`
+            }else if(x == coin3_x && y == coin3_y){
+                gameMap.innerHTML += `<div class="coin"></div>`
+            }else if(x == bomb_x && y == bomb_y && !bomb_state){
+                gameMap.innerHTML += `<div></div>`   
             }else if(x == bomb_x && y == bomb_y){
                 gameMap.innerHTML += `<div class="bomb"></div>`   
-                if(bomb_state == false){
-                    gameMap.innerHTML = `<div></div>` 
-                }
+            }else if(x == bomb2_x && y == bomb2_y && !bomb2_state){
+                gameMap.innerHTML += `<div></div>`   
+            }else if(x == bomb2_x && y == bomb2_y){
+                gameMap.innerHTML += `<div class="bomb"></div>`   
             }else{
                 gameMap.innerHTML += `<div></div>` 
             }
