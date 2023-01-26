@@ -1,0 +1,37 @@
+body{
+    background-color: #234;
+    color: white;
+    padding: 1em;
+    font-family: Arial;
+}
+
+/* collapse component style */
+.collapse-container{
+    border: 1px solid #456;
+    padding: 1em;
+}
+
+.collapse-title{
+    cursor: pointer;
+    user-select: none;
+}
+
+.collapse-title img{
+    width: 32px;
+    transform: translateY(8px);
+    filter: invert(1);
+}
+
+.collapse-content{
+    padding-left: 34px;
+    /* border: 1px solid green; */
+    overflow: hidden;
+    transition: 0.5s;
+    height: 200px;
+}
+
+.collapse-content.hidden{
+    height: 0;
+    
+}
+
