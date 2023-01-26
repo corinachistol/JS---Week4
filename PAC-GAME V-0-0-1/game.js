@@ -44,27 +44,27 @@ function action(){
         case "ArrowLeft":  pac_x-- ; break
     }
 
-    if(pac_x == coin_x && pac_y == coin_y){
+  //aici ar trebui o functie pt ca "scorul" se repeta
+    if(pac_x == coin_x && pac_y == coin_y && !(!coin_state) ){
         score += 10 
-        coin_state = false
-        
+        coin_state = false 
     }
-    if(pac_x == coin2_x && pac_y == coin2_y){
+
+    if(pac_x == coin2_x && pac_y == coin2_y && !(!coin2_state)){
+        score += 10  
+        coin2_state = false 
+    }
+
+    if(pac_x == coin3_x && pac_y == coin3_y && !(!coin3_state)){
         score += 10 
-        coin2_state = false
-        
+        coin3_state = false  
     }
-    if(pac_x == coin3_x && pac_y == coin3_y){
-        score += 10 
-        coin3_state = false
-        
-    }
-  
-    if(pac_x == bomb_x && pac_y == bomb_y){
+  // aici tot o functie pentru "hp"
+    if(pac_x == bomb_x && pac_y == bomb_y && !(!bomb_state)){
         hp -=20
         bomb_state = false 
     }
-    if(pac_x == bomb2_x && pac_y == bomb2_y){
+    if(pac_x == bomb2_x && pac_y == bomb2_y && !(!bomb2_state)){
         hp -=20
         bomb2_state = false 
     }
@@ -116,7 +116,6 @@ function renderMap(){
                 gameMap.innerHTML += `<div></div>` 
             }
 
-            
         }
     }
     gameScore.innerHTML = `Score: ${score}`
