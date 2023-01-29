@@ -71,6 +71,7 @@ article figcaption{
 figure{
     width: inherit;
     height: inherit;
+    margin: 0;
 }
 
 figcaption h1{
