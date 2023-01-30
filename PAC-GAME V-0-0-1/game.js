@@ -35,6 +35,12 @@ let end_row = 10
 let start_col = 1
 let end_col = 10
 
+const checkCondition = (px,cx,py,cy,cs, csv) =>{
+    return score += 10 
+        coin_state = false 
+        
+}
+
 function action(){
     
     switch(event.key){
@@ -45,10 +51,9 @@ function action(){
     }
 
   //aici ar trebui o functie pt ca "scorul" se repeta
-    if(pac_x == coin_x && pac_y == coin_y && !(!coin_state) ){
-        score += 10 
-        coin_state = false 
-    }
+    //pac_x == coin_x && pac_y == coin_y && !(!coin_state)
+
+    checkCondition(2,2, 3,3, coin_state,true)
 
     if(pac_x == coin2_x && pac_y == coin2_y && !(!coin2_state)){
         score += 10  
@@ -89,7 +94,7 @@ function renderMap(){
     for(let y = 1; y <= 10; y++){
         for(let x = 1; x <= 10; x++){
 
-            if(x == pac_x && y == pac_y){
+            if      (x == pac_x && y == pac_y){
                 gameMap.innerHTML += `<div class="pac"></div>`  
             }else if(x == coin_x && y == coin_y && !coin_state){
                 gameMap.innerHTML += `<div></div>`
